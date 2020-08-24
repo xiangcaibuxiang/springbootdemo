@@ -95,7 +95,7 @@ public class MailService {
             return ResponseEntity.status(HttpStatus.CREATED).body("发送成功");
         } catch (Exception e) {
             e.printStackTrace();
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("e.getMessage()");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         }
     }
 }

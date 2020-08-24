@@ -27,8 +27,8 @@ public class MailController {
     public void sendSimpleMail() {
         mailService.sendSimpleMail(mailName,
                 toUsername,
-                "欢迎关注微信公众号「武培轩」",
-                "感谢你这么可爱，这么优秀，还来关注我，关注了就要一起成长哦~~回复【资料】领取优质资源！");
+                "一个人即使已登上顶峰，也仍要自强不息",
+                "意志命运往往背道而驰，决心到最后会全部推倒");
     }
 
 
@@ -39,9 +39,9 @@ public class MailController {
     public ResponseEntity<String> sendMimeMail() {
         return mailService.sendMimeMail(mailName,
                 toUsername,
-                "欢迎关注微信公众号「武培轩」",
-                "<h3>感谢你这么可爱，这么优秀，还来关注我，关注了就要一起成长哦~~</h3><br>" +
-                        "回复【资料】领取优质资源！<br>" +
+                "只有把抱怨环境的心情，化为上进的力量，才是成功的保证",
+                "<h3>只有永远躺在泥坑里的人，才不会再掉进坑里~~</h3><br>" +
+                        "意志命运往往背道而驰，决心到最后会全部推倒<br>" +
                         "<img src='cid:logo'>");
     }
 
@@ -54,10 +54,10 @@ public class MailController {
     @GetMapping("/sendTemplateMail")
     public ResponseEntity<String> sendTemplateMail() {
         Context context = new Context();
-        context.setVariable("username", "武培轩");
+        context.setVariable("username", "潇洒宇");
         return mailService.sendTemplateMail(mailName,
                 toUsername,
-                "欢迎关注微信公众号「武培轩」",
+                "邮件发送「啦啦啦」",
                 context);
     }
 }
